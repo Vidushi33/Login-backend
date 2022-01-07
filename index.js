@@ -15,8 +15,8 @@ app.use(function (request, response, next) {
 
 const mongoose = require("mongoose");
 const UserModel = require('./database/user');
-// var mongoDB = process.env.MONGODB_URI;
-mongoose.connect(`mongodb+srv://vidushimalik33:${process.env.password}@cluster0.lvrnv.mongodb.net/login-database?retryWrites=true&w=majority` , { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log("CONNECTION ESTABLISHED")).catch(err => console.log(err));
+var mongoDB = process.env.MONGODB_URI;
+mongoose.connect('mongoDB' , { useNewUrlParser: true, useUnifiedTopology: true }).then(() => console.log("CONNECTION ESTABLISHED")).catch(err => console.log(err));
 
 // opening of page
 app.get("/" , (req, res) => {
